@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luxora Estates | Residences of Distinction (Demo)</title>
+<meta name="description" content="Luxora Estates: a demo luxury real estate website with searchable listings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="demo-bar">Demo website: all properties, prices and people are fictional.</div>
+<header class="nav" id="nav">
+  <a href="#top" class="logo">Luxora<span>Estates</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  <nav id="menu" aria-label="Main">
+    <a href="#featured">Featured</a><a href="#listings">Listings</a><a href="#about">About</a>
+    <a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#contact" class="btn small">Enquire</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80')"></div>
+  <div class="hero-copy">
+    <h1>Homes that<br>hold the horizon.</h1>
+    <p>Hand-picked villas, penthouses and estates across the coast, the mountains and the city. Represented by people who know every address personally.</p>
+    <a href="#listings" class="btn">Browse residences</a>
+  </div>
+</section>
+
+<form class="search" id="search" aria-label="Property search">
+  <div class="tabs" role="tablist">
+    <button type="button" class="tab on" data-mode="sale">Buy</button>
+    <button type="button" class="tab" data-mode="rent">Rent</button>
+  </div>
+  <label>Search<input type="search" id="q" placeholder="Name, city or feature"></label>
+  <label>Type<select id="type"><option value="">Any</option><option>Villa</option><option>Penthouse</option><option>Estate</option><option>Townhouse</option></select></label>
+  <label>Location<select id="loc"><option value="">Anywhere</option></select></label>
+  <label>Bedrooms<select id="beds"><option value="0">Any</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option></select></label>
+  <label>Max price <output id="priceOut">Any</output><input type="range" id="price" min="0" max="100" value="100"></label>
+</form>
+
+<section id="featured" class="sec">
+  <div class="head"><h2>Featured this season</h2><p>Three residences our advisors would choose for themselves.</p></div>
+  <div class="grid feat" id="featGrid"></div>
+</section>
+
+<section id="listings" class="sec tint">
+  <div class="head row">
+    <div><h2>All residences</h2><p id="count" aria-live="polite"></p></div>
+    <label class="sort">Sort by<select id="sort"><option value="feat">Featured first</option><option value="pa">Price, low to high</option><option value="pd">Price, high to low</option><option value="size">Largest</option></select></label>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty" hidden><h3>No residences match these filters</h3><p>Widen the price or location, or clear everything and start again.</p><button class="btn" id="reset">Clear filters</button></div>
+</section>
+
+<section id="about" class="sec about">
+  <div class="about-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80')"></div>
+  <div>
+    <h2>A small agency, by design</h2>
+    <p>Luxora Estates was founded on a simple idea: a home worth millions deserves an advisor who answers their own phone. We take on fewer listings each year so every one gets a full-time owner.</p>
+    <p>Our advisors are architects, surveyors and former hoteliers. They read floor plans before brochures and they will tell you when a view is not worth the premium.</p>
+    <div class="stats"><div><b data-n="18">0</b>years in business</div><div><b data-n="240">0</b>homes placed</div><div><b data-n="12">0</b>advisors</div></div>
+  </div>
+</section>
+
+<section id="services" class="sec dark">
+  <div class="head"><h2>What we do for you</h2></div>
+  <div class="svc">
+    <article><h3>Private acquisition</h3><p>Off-market access, negotiation and a single point of contact from first viewing to keys.</p></article>
+    <article><h3>Discreet sales</h3><p>Photography, staging and quiet outreach to vetted buyers, with no public signage.</p></article>
+    <article><h3>Luxury rentals</h3><p>Furnished residences for stays of three months to three years, fully managed.</p></article>
+    <article><h3>Valuation and advice</h3><p>Independent price opinions backed by comparable sales and a building survey.</p></article>
+  </div>
+</section>
+
+<section class="sec why">
+  <div class="head"><h2>Why clients stay with us</h2></div>
+  <ul>
+    <li><h3>One advisor, start to finish</h3><p>You never get handed to a junior.</p></li>
+    <li><h3>Honest pricing</h3><p>Every valuation shows the sales behind it.</p></li>
+    <li><h3>Legal and tax introductions</h3><p>Trusted specialists in each region we cover.</p></li>
+    <li><h3>Replies within two hours</h3><p>On weekdays, by phone or WhatsApp.</p></li>
+  </ul>
+</section>
+
+<section id="gallery" class="sec tint">
+  <div class="head"><h2>Inside the portfolio</h2><p>Select an image to enlarge it.</p></div>
+  <div class="gal" id="gal"></div>
+</section>
+
+<section id="contact" class="sec contact">
+  <div>
+    <h2>Arrange a private viewing</h2>
+    <p>Tell us what you are looking for. An advisor will reply within two working hours.</p>
+    <p class="meta">Via del Mare 12, Demo City<br>+1 555 010 0000<br>hello@luxora-demo.example</p>
+    <a class="btn wa" id="waContact" target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+  <form id="form" novalidate>
+    <label>Full name<input name="name" autocomplete="name" required><small></small></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required><small></small></label>
+    <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="Optional"><small></small></label>
+    <label>Message<textarea name="msg" rows="4" required></textarea><small></small></label>
+    <button class="btn" type="submit">Send enquiry</button>
+    <p class="ok" id="ok" role="status" hidden>Thank you. Your enquiry is noted. This demo does not send data anywhere.</p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div><a href="#top" class="logo">Luxora<span>Estates</span></a><p>Residences of distinction. Demo content for portfolio purposes.</p></div>
+  <div><h4>Explore</h4><a href="#listings">Listings</a><a href="#services">Services</a><a href="#about">About</a></div>
+  <div><h4>Contact</h4><a href="#contact">Enquiries</a><a id="waFoot" target="_blank" rel="noopener">WhatsApp</a></div>
+  <p class="copy">&copy; <span id="yr"></span> Luxora Estates. A fictional brand.</p>
+</footer>
+
+<a class="wa-fab" id="waFab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<dialog id="modal" aria-label="Property details"></dialog>
+<dialog id="lightbox" aria-label="Image viewer"><button class="x" aria-label="Close">&times;</button><img alt=""></dialog>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
